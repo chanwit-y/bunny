@@ -2,7 +2,7 @@ import { CreateMUIStyled, Theme  } from '@mui/material';
 import { ImgHTMLAttributes } from 'react';
 
 type Props = {
-  src: string;
+  src: string ;
   size?: number;
   pl?: number;
   pt?: number;

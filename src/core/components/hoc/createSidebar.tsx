@@ -20,10 +20,12 @@ import {
 import { ComponentType, Dispatch, Fragment, SetStateAction } from 'react';
 import { Menu, MenuGroup } from './index.d';
 import { MenuCollapseItem } from '../common';
+// import Image, { StaticImageData } from 'next/image';
 
 export type CreateSidebarProps = {
   menus: (Menu | MenuGroup)[];
-  logo: JSX.Element;
+  logo?: JSX.Element;
+  // nextLogo?: StaticImageData;
   headerLine?: JSX.Element;
   projectName: JSX.Element;
   location: string[] | string;
@@ -259,6 +261,7 @@ export const createSidebar = <P extends CreateSidebarProps>(
         animate={{ opacity: 1, rotateY: !open ? 0 : 360 }}
         transition={{ duration: 0.4 }}
       >
+        {/* {logo ? logo : <Image src={nextLogo} />} */}
         {logo}
       </MotionDiv>
     );
@@ -282,7 +285,7 @@ export const createSidebar = <P extends CreateSidebarProps>(
 
     return (
       <StyledDrawer variant="permanent" open={open} sx={{ height: "100%" }}>
-        <DrawerHeader sx={{width: "100%", m: 0}}>
+        <DrawerHeader sx={{ width: "100%", m: 0 }}>
           {open ? (
             <Box width={"100%"}>
               <Box
@@ -292,10 +295,13 @@ export const createSidebar = <P extends CreateSidebarProps>(
                 display="flex"
                 justifyContent="space-between"
               >
-                <Logo />
+                <Box display="flex" justifyItems="center" gap={2}>
+                  <Logo />
+                  {projectName}
+                </Box>
                 <Arrow />
               </Box>
-              {projectName}
+              {/* {projectName} */}
             </Box>
           ) : (
             <Box

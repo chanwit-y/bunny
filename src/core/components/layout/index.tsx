@@ -1,8 +1,10 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 // import { useAppInsights } from "@banpudev/react-appinsights";
-import { AppBar, Main, Sidebar, Toolbar, ImageIcon } from "../common";
+import { AppBar, ImageIcon, Main, Sidebar, Toolbar } from "../common";
 import { Box, Typography, Divider } from "@mui/material";
 import { menus } from "@/core/config/menu";
+import Image from "next/image";
+import logo from "@/asset/logo.png";
 
 // import logo from "../../assets/images/logo.png";
 // import { useLocation } from "react-router-dom";
@@ -30,14 +32,16 @@ export const Layout = ({ children }: Props) => {
 			</AppBar>
 			<Sidebar
 				menus={menus}
-				logo={<ImageIcon src="" width="35px" height="35px" />}
+				// logo={<ImageIcon src={"../../..//assets/images/logo.png"} width="35px" height="35px" />}
+				logo={<Image src={logo} width={35} height={35} alt={""} />}
+				// nextLogo={logo}
 				headerLine={<Divider sx={{ color: "black", width: "240px", height: "4px" }} />}
 				projectName={<Box display="flex" justifyContent="center" alignItems="center">
 					<Typography fontWeight={600} fontSize={16} >
-						React starter
+						Bunny
 					</Typography>
 				</Box>}
-				location={location.pathname}
+				location={"/"}
 				open={open}
 				setOpen={setOpen}
 			/>
