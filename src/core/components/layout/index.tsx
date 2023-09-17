@@ -10,7 +10,7 @@ type Props = {
 	children: React.ReactNode
 };
 export const Layout = ({ children }: Props) => {
-	const [open, setOpen] = useState(true);
+	const [open, setOpen] = useState(false);
 	const pathname = usePathname()
 
 	return (

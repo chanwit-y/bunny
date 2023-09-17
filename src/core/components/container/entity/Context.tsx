@@ -116,6 +116,7 @@ const EntityProvider = ({ children, id }: Props) => {
 				markerEnd: {
 					type: MarkerType.ArrowClosed,
 				},
+				animated: true,
 
 			}]))
 		}

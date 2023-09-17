@@ -37,21 +37,27 @@ export const EntityItem = memo(({ tableName, handleId, column }: Props) => {
 
 	return (
 		<Box
+			component={Button}
 			position='relative'
 			bgcolor={isHighlight ? blue[50] : undefined}
-			sx={{ transition: "background-color 0.5s ease" }}>
+			sx={{
+				transition: "background-color 0.5s ease",
+				width: '100%',
+				px: .4,
+				py: .2,
+				fontSize: '6px',
+				textTransform: 'none',
+			}}
+			onDoubleClick={handleClick}>
 			<Box
 				width="100%"
 				display="flex"
 				justifyContent="space-between"
-				alignItems="center"
+				// alignItems="center"
 				px={.5} py={.3} >
-				<Box display="flex" alignItems='center'  >
+				<Box display="flex" alignItems='center' gap={.2} >
 					<DragIndicatorIcon sx={{ fontSize: 10, color: grey[400] }} />
-					{column.isPK ? <Box p={.1} px={.2} mr={.5} borderRadius={.2} sx={{ backgroundColor: blue[400] }} >
-						<Typography fontSize={6} color="white" letterSpacing={.1}>PK</Typography>
-					</Box> : null}
-					<Box width={column.isPK ? 20 : 35} maxWidth={35}>
+					{/* <Box width={column.isPK ? 20 : 35} maxWidth={35}> */}
 						<Tooltip title={column.name}>
 							<Typography
 								overflow={'hidden'}
@@ -61,11 +67,15 @@ export const EntityItem = memo(({ tableName, handleId, column }: Props) => {
 								{`${column.name}`}
 							</Typography>
 						</Tooltip>
-					</Box>
-					{/* <Divider orientation='vertical' sx={{color: red}} /> */}
-					<Typography mx={.5} fontSize={8} color={blue[900]} fontWeight='bold' letterSpacing={.4}>
-						{`${column.dataType}`}
-					</Typography>
+					{/* </Box> */}
+
+					{column.isPK ? <Box p={.1} px={.2} mr={.5} borderRadius={.2} sx={{ backgroundColor: blue[400] }} >
+						<Typography fontSize={6} color="white" letterSpacing={.1}>PK</Typography>
+					</Box> : null}
+
+				</Box>
+				<Box display="flex" alignItems='center' >
+
 					{column.length && (<Box
 						// component='span'
 						px={.3}
@@ -78,12 +88,10 @@ export const EntityItem = memo(({ tableName, handleId, column }: Props) => {
 						letterSpacing={.4}>
 						{column.length}
 					</Box>)}
+					<Typography mx={.5} fontSize={8} color={blue[900]} fontWeight='bold' letterSpacing={.4}>
+						{`${column.dataType}`}
+					</Typography>
 
-				</Box>
-				<Box  >
-					<IconButton aria-label="edit" size='small' onClick={handleClick}>
-						<MoreVertIcon sx={{ fontSize: 7 }} />
-					</IconButton>
 					<Popover
 						id={id}
 						open={open}

@@ -103,11 +103,11 @@ export const EntityNode = memo(({ data }: Props) => {
             </IconButton>
           }
 
-          <IconButton size='small' sx={{ p: 0, mx: .1 }} onClick={handleShowColumnInfo} >
-            <AddCircleIcon sx={{ fontSize: 8, color: green[700] }} />
-          </IconButton>
           <IconButton size='small' sx={{ p: 0, mx: .1 }}  >
             <CancelIcon sx={{ fontSize: 8, color: red[700] }} />
+          </IconButton>
+          <IconButton size='small' sx={{ p: 0, mx: .1 }} onClick={handleShowColumnInfo} >
+            <AddCircleIcon sx={{ fontSize: 8, color: green[700] }} />
           </IconButton>
           <Popover
             id={id}

@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect } from 'react'
 import { EntityNode } from './EntityNode';
-import ReactFlow, { Background, Controls, MarkerType, ReactFlowProvider, addEdge, useEdgesState, useNodesState } from 'reactflow';
+import ReactFlow, { Background, Controls, MarkerType, MiniMap, ReactFlowProvider, addEdge, useEdgesState, useNodesState } from 'reactflow';
 import { useEntity } from './Context';
 
 
@@ -32,6 +32,7 @@ export const Entity = memo(() => {
 				nodeTypes={nodeTypes}
 			>
 				{/* <MiniMap style={minimapStyle} zoomable pannable /> */}
+				<MiniMap  zoomable pannable />
 				<Controls />
 				<Background color="#aaa" gap={10} />
 			</ReactFlow>

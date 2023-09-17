@@ -4,6 +4,7 @@ import { Colors } from "../../core/constants/coolor";
 
 import StorageIcon from '@mui/icons-material/Storage';
 import FunctionsIcon from '@mui/icons-material/Functions';
+import AccountTreeIcon from '@mui/icons-material/AccountTree';
 
 import SettingIcon from "@mui/icons-material/Settings";
 import SquareIcon from "@mui/icons-material/Square";
@@ -16,6 +17,15 @@ const initIcon = (Icon: ComponentType<any>) => (
 );
 
 export const menus: (Menu | MenuGroup)[] = [
+	{
+		name: "project",
+		text: "Project",
+		icon: initIcon(AccountTreeIcon),
+		path: "/",
+		breadcrumbs: ["Project"],
+		breadcrumbLinks: ["/project", '/'],
+		active: true,
+	},
 	{
 		groupName: "Database",
 		//     text: "Database",

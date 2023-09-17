@@ -1,6 +1,6 @@
 import React from 'react'
-import { NextPage } from 'next'
 import dynamic from 'next/dynamic';
+import { NextPage } from 'next'
 import { Box } from '@mui/material';
 
 
