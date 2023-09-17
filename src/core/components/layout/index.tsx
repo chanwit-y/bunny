@@ -1,16 +1,17 @@
 import { Fragment, useState } from "react";
 import { AppBar, Main, Sidebar, Toolbar } from "../common";
 import { Box, Typography, Divider } from "@mui/material";
-import { menus } from "@/core/config/menu";
+import { menus } from "@/utils/config/menu";
 import Image from "next/image";
 import logo from "@/asset/logo.png";
-import { Colors } from "@/core/constants";
+import { usePathname } from 'next/navigation'
 
 type Props = {
 	children: React.ReactNode
 };
 export const Layout = ({ children }: Props) => {
 	const [open, setOpen] = useState(true);
+	const pathname = usePathname()
 
 	return (
 		<Fragment>
@@ -26,7 +27,7 @@ export const Layout = ({ children }: Props) => {
 						Bunny
 					</Typography>
 				</Box>}
-				location={"/"}
+				location={pathname}
 				open={open}
 				setOpen={setOpen}
 			/>

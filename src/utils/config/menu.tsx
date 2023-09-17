@@ -1,14 +1,13 @@
 
 import { ComponentType } from "react";
-import { Colors } from "../constants/coolor";
+import { Colors } from "../../core/constants/coolor";
 
 import StorageIcon from '@mui/icons-material/Storage';
 import FunctionsIcon from '@mui/icons-material/Functions';
-import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 
 import SettingIcon from "@mui/icons-material/Settings";
 import SquareIcon from "@mui/icons-material/Square";
-import { Menu, MenuGroup } from "../components/hoc/index.d";
+import { Menu, MenuGroup } from "../../core/components/hoc/index.d";
 
 const primarySXIcon = { color: Colors.primary };
 
@@ -31,9 +30,9 @@ export const menus: (Menu | MenuGroup)[] = [
 				name: "Entity",
 				text: "Entity",
 				icon: <SquareIcon fontSize="small" sx={{ fontSize: 10, color: Colors.lavenderBlue, rotate: "45deg" }} />,
-				path: "/",
+				path: "/database/entity",
 				breadcrumbs: ["Entity"],
-				breadcrumbLinks: ["/"],
+				breadcrumbLinks: ["/database/entity"],
 				active: true,
 			},
 		]
