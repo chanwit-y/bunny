@@ -16,7 +16,7 @@ export const Layout = ({ children }: Props) => {
 	return (
 		<Fragment>
 			<AppBar elevation={0} open={open}>
-				<Toolbar start={<>A</>} end={<>B</>} />
+				<Toolbar start={<></>} end={<></>} />
 			</AppBar>
 			<Sidebar
 				menus={menus}

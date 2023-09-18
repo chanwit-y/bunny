@@ -13,7 +13,7 @@ type Props = {}
 const Entity: NextPage<Props> = ({ }: Props) => {
 
 	return (
-		<Box width="100vw" height="100vh">
+		<Box height="95%" width="100%">
 			<EntityContainer />
 		</Box>
 	)

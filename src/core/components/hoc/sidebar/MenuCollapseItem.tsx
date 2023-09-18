@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import { ForwardRefComponent, HTMLMotionProps } from 'framer-motion';
 import { Fragment, ComponentType, useState, MouseEvent } from 'react';
-import { MenuGroup } from '../hoc/index.d';
+import { MenuGroup } from '../index.d';
 
 type Props = {
   active: boolean;
@@ -153,7 +153,10 @@ export const MenuCollapseItem = ({
         >
           {menuGroup.menus.map((s, i) => (
 
-            <Link style={{ textDecoration: 'none' }} to={s.path}>
+            // <Link style={{ textDecoration: 'none' }} to={s.path}>
+            <Link style={{ textDecoration: 'none' }} href={{
+              pathname: s.path,
+            }}>
               <MenuItem key={`sub-menu-item-${i}`} onClick={handleClose}>
                 <ListItemIcon>{s.icon}</ListItemIcon>
                 <ListItemText sx={{ height: 50 }}><p style={{ fontSize: 14 }}>{s.text}</p></ListItemText>

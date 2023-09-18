@@ -8,9 +8,9 @@ export const EntityContainer = memo(() => {
 	return (
 		<EntityProvider id="ksuzK5dyHkmKOnEHZs9p">
 			<ToolBox />
-			<Box height={500} width={1100}>
+			{/* <Box height="88%" width="92%"> */}
 				<Entity />
-			</Box>
+			{/* </Box> */}
 		</EntityProvider>
 	)
 })

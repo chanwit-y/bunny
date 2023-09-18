@@ -1,9 +1,11 @@
-import { styled, AppBar as MuiAppBar, Toolbar as MuiToolbar, Box, Drawer, IconButton, Collapse, List, ListItem, ListItemText, ListItemIcon, Popover, MenuItem, Link } from "@mui/material";
+import { styled, AppBar as MuiAppBar, Toolbar as MuiToolbar, Box, Drawer, IconButton, Collapse, List, ListItem, ListItemText, ListItemIcon, Popover, MenuItem } from "@mui/material";
+
 import { createAppBar, createImageIcon, createMain, createSidebar, createToolbar } from "../hoc";
 import { createDomMotionComponent } from "framer-motion";
 
 import { ExpandMore, DoubleArrow } from "@mui/icons-material";
-import { SidebarOption } from "../hoc/createSidebar";
+import { SidebarOption } from "../hoc/sidebar/createSidebar";
+import Link from "next/link";
 
 
 
@@ -35,7 +37,7 @@ const sidebarOption: SidebarOption  = {
 };
 
 
-export { MenuCollapseItem } from "./MenuCollapseItem";
+export { MenuCollapseItem } from "../hoc/sidebar/MenuCollapseItem";
 
 
 

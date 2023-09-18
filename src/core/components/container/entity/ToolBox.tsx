@@ -11,7 +11,7 @@ export const ToolBox = () => {
 	const { addEntity, nodes, createEntity, updateEntity } = useEntity();
 
 	return (
-		<Box display="flex" position="sticky" top={0} >
+		<Box display="flex" justifyContent="end" >
 			<IconButton color='primary' onClick={() => addEntity()}>
 				<AddBoxIcon />
 			</IconButton>

@@ -18,8 +18,8 @@ import {
   MotionStyle,
 } from 'framer-motion';
 import { ComponentType, Dispatch, Fragment, SetStateAction } from 'react';
-import { Menu, MenuGroup } from './index.d';
-import { MenuCollapseItem } from '../common';
+import { Menu, MenuGroup } from '../index.d';
+import { MenuCollapseItem } from '../../common';
 // import Image, { StaticImageData } from 'next/image';
 
 export type CreateSidebarProps = {
@@ -185,7 +185,10 @@ export const createSidebar = <P extends CreateSidebarProps>(
           key={`menu-item-${index}`}
           active={location.includes(item.name) || location === item.path}
         >
-          <Link style={{ textDecoration: 'none' }} to={item.path}>
+          {/* <Link style={{ textDecoration: 'none' }} to={item.path}> */}
+          <Link style={{ textDecoration: 'none' }} href={{
+            pathname: item.path,
+          }}>
             <ListItem button key={`list-item-${item.name}`}>
               <ListItemIcon>
                 <BoxIcon
